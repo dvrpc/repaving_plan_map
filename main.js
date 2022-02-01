@@ -26,9 +26,11 @@ map.on("load", () => {
   ["planned-segments", "B12", "C12", "D13", "M11", "P12"].forEach((layer) => {
     add_pointer_when_hovering(map, layer);
   });
+});
 
   // make a popup when the user clicks on one or more of the map layers
   map.on("click", (e) => {
+
     // get all features near the user's click
     let features = map.queryRenderedFeatures(e.point, {
       layers: ["planned-segments", "B12", "C12", "D13", "M11", "P12"],
@@ -37,8 +39,9 @@ map.on("load", () => {
     // as long as there's at least one feature, make the message
     // and then add the popup to the map
     if (features.length > 0) {
-      let message = make_popup_message(features);
-      make_popup(e, message, map);
+      let lat = e.lngLat.wrap().lat;
+      let lng = e.lngLat.wrap().lng;
+      let message = make_popup_message(features,lat,lng);
+      make_popup(e, message,map);
     }
   });
-});

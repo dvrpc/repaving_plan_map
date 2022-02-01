@@ -1,20 +1,22 @@
-const make_popup_message = (featurelist) => {
+const make_popup_message = (featurelist,lat,lng) => {
   // Review every feature that was clicked on, and add a section
   // to the popup message for each one, split by a horizontal rule tag
-
+  // console.log(lat);
   let messages = [];
 
   // Use different popup templates depending on the source layer,
   // in order to account for slightly different columns and names
   featurelist.forEach((feature) => {
     // Handle colorful layer showing all future years
+  //  console.log(feature);
     if (feature.layer.source == "plan") {
       let msg = `
         <h4>${feature.properties["Road Name"]} / SR ${feature.properties.sr}</h4>
         <p>Planned Year: ${feature.properties.Year}<br/>
         From: ${feature.properties.From}<br/>
         To: ${feature.properties.To}<br/>
-        Municipalities: ${feature.properties.muni}
+        Municipalities: ${feature.properties.muni}<br/>
+        <a href="https://maps.google.com/maps?q=&amp;layer=c&amp;cbll=${lat},${lng}" rel="nofollow ugc" target="_blank">Open Google Streetview</a>
         </p>
         `;
       if (messages.indexOf(msg) == -1) {
