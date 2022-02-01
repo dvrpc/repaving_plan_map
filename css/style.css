@@ -137,6 +137,9 @@ p {
   margin-left: 50px;
   line-height: 125%;
 }
+.popup .popuptext a {
+  color: white;
+}
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
