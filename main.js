@@ -28,20 +28,25 @@ map.on("load", () => {
   });
 });
 
-  // make a popup when the user clicks on one or more of the map layers
-  map.on("click", (e) => {
+// make a popup when the user clicks on one or more of the map layers
+map.on("click", (e) => {
+  // set bbox as area around clicked point
+  const bbox = [
+    [e.point.x - 5, e.point.y - 5],
+    [e.point.x + 5, e.point.y + 5],
+  ];
 
-    // get all features near the user's click
-    let features = map.queryRenderedFeatures(e.point, {
-      layers: ["planned-segments", "B12", "C12", "D13", "M11", "P12"],
-    });
-
-    // as long as there's at least one feature, make the message
-    // and then add the popup to the map
-    if (features.length > 0) {
-      let lat = e.lngLat.wrap().lat;
-      let lng = e.lngLat.wrap().lng;
-      let message = make_popup_message(features,lat,lng);
-      make_popup(e, message,map);
-    }
+  // get all features near the user's click
+  let features = map.queryRenderedFeatures(bbox, {
+    layers: ["planned-segments", "B12", "C12", "D13", "M11", "P12"],
   });
+
+  // as long as there's at least one feature, make the message
+  // and then add the popup to the map
+  if (features.length > 0) {
+    let lat = e.lngLat.wrap().lat;
+    let lng = e.lngLat.wrap().lng;
+    let message = make_popup_message(features, lat, lng);
+    make_popup(e, message, map);
+  }
+});
