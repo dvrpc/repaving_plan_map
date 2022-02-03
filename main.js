@@ -41,6 +41,10 @@ map.on("click", (e) => {
     layers: ["planned-segments", "B12", "C12", "D13", "M11", "P12"],
   });
 
+  //filter map layer
+  let clicked_Year = features[0].properties["Year"];
+  map.setFilter("plan_selected", ["==", "Year", clicked_Year]);
+
   // as long as there's at least one feature, make the message
   // and then add the popup to the map
   if (features.length > 0) {

@@ -38,6 +38,29 @@ const layers = {
       ],
     },
   },
+  plan_selected: {
+    id: "planned-segments",
+    type: "line",
+    source: "plan",
+    paint: {
+      "line-width": 6,
+      "line-color": [
+        "match",
+        ["get", "Year"],
+        "2022",
+        "#27AE60 ", //green
+        "2023",
+        "#F39C12", //orange
+        "2024",
+        "red", //red
+        "2025",
+        "#A569BD", //purple
+        "2026",
+        "#3498DB", //blue
+        "gray",
+      ],
+    },
+  },
   B12: {
     id: "B12",
     type: "line",
