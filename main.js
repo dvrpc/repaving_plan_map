@@ -23,7 +23,7 @@ map.on("load", () => {
   for (const layer in layers) map.addLayer(layers[layer], firstSymbolId);
 
   // set the pointer style when hovering specific layers
-  ["planned-segments", "B12", "C12", "D13", "M11", "P12"].forEach((layer) => {
+  ["planned-segments"].forEach((layer) => {
     add_pointer_when_hovering(map, layer);
   });
 });
@@ -38,8 +38,12 @@ map.on("click", (e) => {
 
   // get all features near the user's click
   let features = map.queryRenderedFeatures(bbox, {
-    layers: ["planned-segments", "B12", "C12", "D13", "M11", "P12"],
+    layers: ["planned-segments"],
   });
+
+  //filter map layer
+  let clicked_Year = features[0].properties["Year"];
+  map.setFilter("plan_selected", ["==", "Year", clicked_Year]);
 
   // as long as there's at least one feature, make the message
   // and then add the popup to the map

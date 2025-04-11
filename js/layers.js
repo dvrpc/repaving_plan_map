@@ -38,35 +38,28 @@ const layers = {
       ],
     },
   },
-  B12: {
-    id: "B12",
+  plan_selected: {
+    id: "planned-segments",
     type: "line",
-    source: "B12",
-    paint: yellow_paint_style,
-  },
-  C12: {
-    id: "C12",
-    type: "line",
-    source: "C12",
-    paint: yellow_paint_style,
-  },
-  D13: {
-    id: "D13",
-    type: "line",
-    source: "D13",
-    paint: yellow_paint_style,
-  },
-  M11: {
-    id: "M11",
-    type: "line",
-    source: "M11",
-    paint: yellow_paint_style,
-  },
-  P12: {
-    id: "P12",
-    type: "line",
-    source: "P12",
-    paint: yellow_paint_style,
+    source: "plan",
+    paint: {
+      "line-width": 6,
+      "line-color": [
+        "match",
+        ["get", "Year"],
+        "2022",
+        "#27AE60 ", //green
+        "2023",
+        "#F39C12", //orange
+        "2024",
+        "red", //red
+        "2025",
+        "#A569BD", //purple
+        "2026",
+        "#3498DB", //blue
+        "gray",
+      ],
+    },
   },
 };
 

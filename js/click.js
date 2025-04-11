@@ -1,4 +1,4 @@
-const make_popup_message = (featurelist,lat,lng) => {
+const make_popup_message = (featurelist, lat, lng) => {
   // Review every feature that was clicked on, and add a section
   // to the popup message for each one, split by a horizontal rule tag
   // console.log(lat);
@@ -8,7 +8,7 @@ const make_popup_message = (featurelist,lat,lng) => {
   // in order to account for slightly different columns and names
   featurelist.forEach((feature) => {
     // Handle colorful layer showing all future years
-  //  console.log(feature);
+    //  console.log(feature);
     if (feature.layer.source == "plan") {
       let msg = `
         <h4>${feature.properties["Road Name"]} / SR ${feature.properties.sr}</h4>
@@ -18,18 +18,6 @@ const make_popup_message = (featurelist,lat,lng) => {
         Municipalities: ${feature.properties.muni}<br/>
         <a href="https://maps.google.com/maps?q=&amp;layer=c&amp;cbll=${lat},${lng}" rel="nofollow ugc" target="_blank">Open Google Streetview</a>
         </p>
-        `;
-      if (messages.indexOf(msg) == -1) {
-        messages.push(msg);
-      }
-    }
-    // Handle yellow layers for county-specific 2022 schedule
-    // TODO: duplicates may show up if one layer uses "AVE" and the other uses "AV" (etc...)
-    else {
-      let msg = `
-        <h4>Included in 2022 Paving Package
-      </h4>
-      <p> Project Number: ${feature.properties.project_num}<p/>
         `;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
