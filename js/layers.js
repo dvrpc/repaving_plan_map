@@ -61,36 +61,6 @@ const layers = {
       ],
     },
   },
-  B12: {
-    id: "B12",
-    type: "line",
-    source: "B12",
-    paint: yellow_paint_style,
-  },
-  C12: {
-    id: "C12",
-    type: "line",
-    source: "C12",
-    paint: yellow_paint_style,
-  },
-  D13: {
-    id: "D13",
-    type: "line",
-    source: "D13",
-    paint: yellow_paint_style,
-  },
-  M11: {
-    id: "M11",
-    type: "line",
-    source: "M11",
-    paint: yellow_paint_style,
-  },
-  P12: {
-    id: "P12",
-    type: "line",
-    source: "P12",
-    paint: yellow_paint_style,
-  },
 };
 
 export { layers };
