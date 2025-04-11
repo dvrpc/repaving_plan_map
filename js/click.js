@@ -12,7 +12,7 @@ const make_popup_message = (featurelist, lat, lng) => {
     if (feature.layer.source == "plan") {
       let msg = `
         <h4>${feature.properties["Loc Road Name RMS"]} / SR ${feature.properties.sr}</h4>
-        <p>Planned Year: ${feature.properties["Calendar Year"]}<br/>
+        <p>Planned Year: ${feature.properties["Calendar year"]}<br/>
         From: ${feature.properties["Intersection From"]}<br/>
         To: ${feature.properties["Intersection To"]}<br/>
         Municipalities: ${feature.properties["Municipality Name1"]}<br/>
