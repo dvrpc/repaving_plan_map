@@ -24,15 +24,15 @@ const layers = {
       "line-color": [
         "match",
         ["get", "Calendar year"],
-        "2022",
-        "#27AE60 ", //green
-        "2023",
-        "#F39C12", //orange
         "2024",
-        "red", //red
+        "#27AE60 ", //green
         "2025",
-        "#A569BD", //purple
+        "#F39C12", //orange
         "2026",
+        "red", //red
+        "2027",
+        "#A569BD", //purple
+        "2028",
         "#3498DB", //blue
         "gray",
       ],
@@ -47,15 +47,15 @@ const layers = {
       "line-color": [
         "match",
         ["get", "Calendar year"],
-        "2022",
-        "#27AE60 ", //green
-        "2023",
-        "#F39C12", //orange
         "2024",
-        "red", //red
+        "#27AE60 ", //green
         "2025",
-        "#A569BD", //purple
+        "#F39C12", //orange
         "2026",
+        "red", //red
+        "2027",
+        "#A569BD", //purple
+        "2028",
         "#3498DB", //blue
         "gray",
       ],
