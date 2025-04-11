@@ -42,8 +42,8 @@ map.on("click", (e) => {
   });
 
   //filter map layer
-  let clicked_Year = features[0].properties["Year"];
-  map.setFilter("plan_selected", ["==", "Year", clicked_Year]);
+  let clicked_Year = features[0].properties["Calendar Year"];
+  map.setFilter("plan_selected", ["==", "Calendar Year", clicked_Year]);
 
   // as long as there's at least one feature, make the message
   // and then add the popup to the map

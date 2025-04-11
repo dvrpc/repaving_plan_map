@@ -11,11 +11,11 @@ const make_popup_message = (featurelist, lat, lng) => {
     //  console.log(feature);
     if (feature.layer.source == "plan") {
       let msg = `
-        <h4>${feature.properties["Road Name"]} / SR ${feature.properties.sr}</h4>
-        <p>Planned Year: ${feature.properties.Year}<br/>
-        From: ${feature.properties.From}<br/>
-        To: ${feature.properties.To}<br/>
-        Municipalities: ${feature.properties.muni}<br/>
+        <h4>${feature.properties["Loc Road Name RMS"]} / SR ${feature.properties.sr}</h4>
+        <p>Planned Year: ${feature.properties["Calendar Year"]}<br/>
+        From: ${feature.properties["Intersection From"]}<br/>
+        To: ${feature.properties["Intersection To"]}<br/>
+        Municipalities: ${feature.properties["Municipality Name1"]}<br/>
         <a href="https://maps.google.com/maps?q=&amp;layer=c&amp;cbll=${lat},${lng}" rel="nofollow ugc" target="_blank">Open Google Streetview</a>
         </p>
         `;
