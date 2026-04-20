@@ -23,6 +23,18 @@ const make_popup_message = (featurelist, lat, lng) => {
         messages.push(msg);
       }
     }
+    if (feature.layer.source == "packages") {
+      let msg = `
+        <h4>${feature.properties["street_nam"]} / SR ${feature.properties["st_rt_no"]}</h4>
+        <p>Paving Year: ${feature.properties["paving_year"]}<br/>
+        Paving Package Number: ${feature.properties["package"]}<br/>
+        County: ${feature.properties["county"]}<br/>
+        </p>
+        `;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
+    }
   });
 
   return messages.join("<hr>");

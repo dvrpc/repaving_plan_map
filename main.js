@@ -38,9 +38,24 @@ map.on("click", (e) => {
 
   // get all features near the user's click
   let features = map.queryRenderedFeatures(bbox, {
-    layers: ["planned-segments"],
+    layers: ["planned-segments", "packages"],
   });
 
+  // clear highlight if clicking empty space
+  if (features.length === 0) {
+    map.setFilter("packages-selected", ["==", "route_identifier", ""]);
+    return;
+  }
+
+  // highlight clicked package feature
+  const packageFeature = features.find((f) => f.layer.id === "packages");
+  if (packageFeature) {
+    map.setFilter("packages-selected", [
+      "==",
+      "route_identifier",
+      packageFeature.properties["route_identifier"],
+    ]);
+  }
   //filter map layer
   let clicked_Year = features[0].properties["Calendar year"];
   map.setFilter("plan_selected", ["==", "Calendar year", clicked_Year]);
@@ -54,3 +69,16 @@ map.on("click", (e) => {
     make_popup(e, message, map);
   }
 });
+//toggle layers
+window.toggleLayer = function (el) {
+  const layerId = el.getAttribute("data-layer");
+  const visibility = map.getLayoutProperty(layerId, "visibility");
+
+  if (visibility === "none") {
+    map.setLayoutProperty(layerId, "visibility", "visible");
+    el.style.opacity = "1";
+  } else {
+    map.setLayoutProperty(layerId, "visibility", "none");
+    el.style.opacity = "0.4";
+  }
+};

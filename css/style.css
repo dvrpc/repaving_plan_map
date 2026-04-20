@@ -38,7 +38,9 @@ body {
   background-color: whitesmoke;
   border-radius: 3px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-  font: 12px/20px "Roboto", sans-serif;
+  font:
+    12px/20px "Inclusive Sans",
+    sans-serif;
   padding: 0px;
   position: absolute;
   left: 10px;
@@ -61,6 +63,18 @@ body {
   border-color: lightslategray;
   border-width: 1px;
 }
+.legend-ramp-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75em;
+}
+
+.legend-ramp-labels span {
+  height: auto;
+  width: auto;
+  display: inline;
+}
+
 img {
   position: fixed;
   width: 20px;
@@ -82,20 +96,20 @@ img {
 
 h1 {
   color: black;
-  font-family: "Play", sans-serif;
+  font-family: "Inclusive Sans", sans-serif;
   font-size: medium;
 }
 h4 {
   color: black;
-  font-family: "Play", sans-serif;
+  font-family: "Inclusive Sans", sans-serif;
   font-size: small;
   margin: 1px;
   padding: 0px;
 }
 h5 {
   color: white;
-  font-family: "Play", sans-serif;
-  font-size: small;
+  font-family: "Inclusive Sans", sans-serif;
+  font-size: medium;
   margin: 1px;
   padding: 0px;
   line-height: 200%;

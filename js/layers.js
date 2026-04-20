@@ -20,7 +20,7 @@ const layers = {
     type: "line",
     source: "plan",
     paint: {
-      "line-width": 1.5,
+      "line-width": 2,
       "line-color": [
         "match",
         ["get", "Calendar year"],
@@ -60,6 +60,45 @@ const layers = {
         "gray",
       ],
     },
+  },
+  packages: {
+    id: "packages",
+    type: "line",
+    source: "packages",
+    paint: {
+      "line-width": 1.5,
+      "line-color": [
+        "interpolate",
+        ["linear"],
+        ["to-number", ["get", "paving_year"]],
+        2018,
+        "#2ecc71",
+        2026,
+        "#9b59b6",
+      ],
+      //"line-color": "#8a8a84",
+      "line-dasharray": [2, 2],
+    },
+  },
+  packages_selected: {
+    id: "packages-selected",
+    type: "line",
+    source: "packages",
+    paint: {
+      "line-width": 6,
+      //"line-color": "#424240",
+      "line-color": [
+        "interpolate",
+        ["linear"],
+        ["to-number", ["get", "paving_year"]],
+        2018,
+        "#2ecc71",
+        2026,
+        "#9b59b6",
+      ],
+      "line-dasharray": [2, 2],
+    },
+    filter: ["==", "route_identifier", ""],
   },
 };
 

@@ -3,6 +3,10 @@ const sources = {
     type: "geojson",
     data: "./data/mapped_plan.geojson",
   },
+  packages: {
+    type: "geojson",
+    data: "./data/paving_packages.geojson",
+  },
   boundaries: {
     type: "geojson",
     data: "./data/municipal_boundaries.geojson",
