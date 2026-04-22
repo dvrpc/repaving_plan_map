@@ -39,7 +39,7 @@ body {
   border-radius: 3px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
   font:
-    12px/20px "Inclusive Sans",
+    15px/25px "Inclusive Sans",
     sans-serif;
   padding: 0px;
   position: absolute;
@@ -101,19 +101,19 @@ img {
 h1 {
   color: black;
   font-family: "Inclusive Sans", sans-serif;
-  font-size: medium;
+  font-size: large;
 }
 h4 {
   color: black;
   font-family: "Inclusive Sans", sans-serif;
-  font-size: small;
+  font-size: medium;
   margin: 1px;
   padding: 0px;
 }
 h5 {
   color: white;
   font-family: "Inclusive Sans", sans-serif;
-  font-size: medium;
+  font-size: large;
   margin: 1px;
   padding: 0px;
   line-height: 200%;
@@ -121,13 +121,13 @@ h5 {
 p {
   color: black;
   font-family: "Roboto", sans-serif;
-  font-size: small;
+  font-size: 25;
   padding: 0px;
 }
 .p2 {
   color: white;
   font-family: "Roboto", sans-serif;
-  font-size: 12;
+  font-size: 25;
   line-height: 150%;
 }
 /* Popup container */
@@ -140,12 +140,12 @@ p {
 /* The actual popup (appears on top) */
 .popup .popuptext {
   visibility: hidden;
-  width: 250px;
+  width: 300px;
   background-color: #555;
   color: #fff;
   text-align: left;
   font-family: "Roboto", sans-serif;
-  font-size: small;
+  font-size: 12;
   border-radius: 5px;
   padding: 8px;
   position: absolute;
