@@ -34,8 +34,12 @@
           <h5>ABOUT</h5>
           This map shows PennDOT-owned roads on District 6's resurfacing plan
           for the next few years. The plan is dynamic, changing based on road
-          conditions, budgets, and other maintenance priorities. This map is
-          updated as new plans are made available through PennDOT's website.
+          conditions, budgets, and other maintenance priorities. This layer is
+          updated as new plans are made available.<br /><br />
+          The Paving Packages layer shows roads that were on contractor paving
+          projects dating back to 2018.<br /><br />
+          Layers can be toggled on and off by clicking the layer name in the
+          legend.
           <h5>CONTACT:</h5>
           Sarah Moran, smoran@dvrpc.org
           <h5>
@@ -73,8 +77,9 @@
         class="legend-item"
         data-layer="planned-segments"
         onclick="toggleLayer(this)"
-      ></div>
-      <h4>Planned Repaving Segments</h4>
+      >
+        <h4>Planned Repaving Segments</h4>
+      </div>
       <div><span style="background-color: #27ae60"></span>2024</div>
       <div><span style="background-color: #f39c12"></span>2025</div>
       <div><span style="background-color: red"></span>2026</div>
@@ -91,7 +96,7 @@
         class="legend-ramp"
         style="
           height: 10px;
-          background: linear-gradient(to right, #2ecc71, #9b59b6);
+          background: linear-gradient(to right, #1abc9c, #e91e63);
           border-radius: 4px;
           margin: 4px 0;
         "

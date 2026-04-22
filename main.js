@@ -73,12 +73,15 @@ map.on("click", (e) => {
 window.toggleLayer = function (el) {
   const layerId = el.getAttribute("data-layer");
   const visibility = map.getLayoutProperty(layerId, "visibility");
+  const checkbox = el.querySelector("input[type='checkbox']");
 
   if (visibility === "none") {
     map.setLayoutProperty(layerId, "visibility", "visible");
     el.style.opacity = "1";
+    if (checkbox) checkbox.checked = true;
   } else {
     map.setLayoutProperty(layerId, "visibility", "none");
     el.style.opacity = "0.4";
+    if (checkbox) checkbox.checked = false;
   }
 };
